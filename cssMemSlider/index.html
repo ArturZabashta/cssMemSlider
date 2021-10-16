@@ -10,28 +10,48 @@
   </head>
   <body>
     <div class="section">
-      <div class="container">
+      <div class="wrapper">
         <main>
+          <input type="radio" name="slide_switcher" id="switcher_1" checked />
+          <input type="radio" name="slide_switcher" id="switcher_2" />
+          <input type="radio" name="slide_switcher" id="switcher_3" />
+          <input type="radio" name="slide_switcher" id="switcher_4" />
+          <input type="radio" name="slide_switcher" id="switcher_5" />
           <figure>
-            <div class="slide active">
+            <div class="slide switcher_1" id="slide_1">
               <img src="./assets/img/deadline.jpg" alt="picture" />
             </div>
+            <div class="slide switcher_2" id="slide_2">
+              <img src="./assets/img/mem_man.jpg" alt="picture" />
+            </div>
+            <div class="slide switcher_3" id="slide_3">
+              <img src="./assets/img/power.jpg" alt="picture" />
+            </div>
+            <div class="slide switcher_4" id="slide_4">
+              <img src="./assets/img/protection.jpg" alt="picture" />
+            </div>
+            <div class="slide switcher_5" id="slide_5">
+              <img src="./assets/img/teg.jpg" alt="picture" />
+            </div>
           </figure>
-        </main>
-        <footer>
+
           <div class="title">
-            <span class="text active"> The deadline is close... </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
+            <div class="text switcher_1">The deadline is close...</div>
+            <div class="text switcher_2">A car into space?! Come on</div>
+            <div class="text switcher_3">No comments...</div>
+            <div class="text switcher_4">Humanity's last hope</div>
+            <div class="text switcher_5">
+              Look, here you need to wrap it in span
+            </div>
           </div>
           <div class="nav-carousel">
-            <button class="nav_dot active"></button>
-            <button class="nav_dot"></button>
-            <button class="nav_dot"></button>
-            <button class="nav_dot"></button>
+            <label for="switcher_1"></label>
+            <label for="switcher_2"></label>
+            <label for="switcher_3"></label>
+            <label for="switcher_4"></label>
+            <label for="switcher_5"></label>
           </div>
-        </footer>
+        </main>
       </div>
     </div>
   </body>
