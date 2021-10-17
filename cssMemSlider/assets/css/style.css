@@ -72,7 +72,8 @@ img {
 }
 .text {
   display: none;
-  font-size: 1.3rem;
+  font-size: 2rem;
+  font-family: Grechen Fuemen, cursive;
   color: rgb(255, 255, 255);
   /*     Добавляем анимацию     */
   animation-name: text;
@@ -192,7 +193,7 @@ main label:after {
     display: block;
   }
   .text {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .nav-carousel {
     justify-content: center;
