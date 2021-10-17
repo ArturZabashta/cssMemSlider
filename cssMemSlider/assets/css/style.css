@@ -22,8 +22,6 @@ main {
   grid-template-areas:
     'header header'
     'title control';
-  /* 3 столбца */
-
   padding-top: 3vh;
   margin: 0 auto;
   width: 90%;
@@ -42,24 +40,57 @@ figure {
 main input {
   display: none;
 }
-
 .slide {
   margin: 0 auto;
   text-align: center;
-  height: 500px;
+  height: 31rem;
+  opacity: 1;
 }
-
 img {
   height: inherit;
   border-radius: 3%;
   height: 100%;
 }
-
-.slide,
+.slide {
+  display: none;
+  /*     Добавляем анимацию     */
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+    transform: translate(-40%, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 .text {
   display: none;
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  /*     Добавляем анимацию     */
+  animation-name: text;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  visibility: visible !important;
 }
-
+@keyframes text {
+  from {
+    opacity: 0;
+    transform: scale(3);
+    transform: translate(100%, -30%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
 #switcher_1:checked ~ .slide1 {
   background-color: rgb(141, 47, 47);
   width: 50%;
@@ -87,76 +118,81 @@ img {
   display: flex;
   justify-content: flex-end;
 }
-
-.text {
-  font-size: 1.3rem;
-  color: rgb(255, 255, 255);
-}
-
 main label {
   cursor: pointer;
   display: inline-block;
-  height: 8px;
+  height: 1rem;
   margin: 3rem 1rem;
   position: relative;
-  width: 8px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
+  width: 1rem;
   border-radius: 50%;
-  -webkit-transition: background ease-in-out 0.5s;
-  -moz-transition: background ease-in-out 0.5s;
-  -o-transition: background ease-in-out 0.5s;
-  transition: background ease-in-out 0.5s;
+  background: rgb(45, 100, 163);
+  border: 0.1rem solid rgb(45, 100, 163);
+  transition-property: border, background;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
 }
-
-main label:hover,
-#slide1:checked ~ .controls label:nth-of-type(1),
-#slide2:checked ~ .controls label:nth-of-type(2),
-#slide3:checked ~ .controls label:nth-of-type(3),
-#slide4:checked ~ .controls label:nth-of-type(4),
-#slide5:checked ~ .controls label:nth-of-type(5) {
-  background: #ddd;
+main label:hover {
+  background: rgb(221, 207, 207);
+  border: 0.1rem solid rgb(221, 207, 207);
+  transition-property: border, background;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
 }
-
+main label:active {
+  background: rgb(136, 136, 136);
+  border: 0.1rem solid rgb(136, 136, 136);
+  transition-property: border, background;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+}
+main label:focus {
+  border: 0.2rem solid rgb(221, 221, 207);
+}
+#switcher_1:checked ~ .nav-carousel label:nth-of-type(1),
+#switcher_2:checked ~ .nav-carousel label:nth-of-type(2),
+#switcher_3:checked ~ .nav-carousel label:nth-of-type(3),
+#switcher_4:checked ~ .nav-carousel label:nth-of-type(4),
+#switcher_5:checked ~ .nav-carousel label:nth-of-type(5) {
+  background-color: transparent;
+}
+/*    Определяю область нажатия    */
 main label:after {
-  border: 2px solid #ddd;
+  border: 0.1rem solid transparent;
   content: ' ';
   display: block;
-  height: 12px;
-  left: -4px;
-  position: absolute;
-  top: -4px;
-  width: 12px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
+  height: 2.8rem;
+  width: 2.8rem;
+  left: -1.2rem;
+  position: relative;
+  top: -1.2rem;
   border-radius: 50%;
 }
-
-@media all and (min-width: 580px) and (max-width: 950px) {
+@media all and (min-width: 37rem) and (max-width: 60rem) {
   .slide {
     margin: 0 auto;
     text-align: center;
-    height: 300px;
+    height: 18rem;
   }
 }
-
-@media all and (max-width: 580px) {
+@media all and (max-width: 36.99rem) {
   .slide {
     margin: 0 auto;
     text-align: center;
-    height: 200px;
+    height: 12rem;
   }
 }
-@media all and (max-width: 500px) {
+@media all and (max-width: 31.2rem) {
   .slide {
     margin: 0 auto;
     text-align: center;
-    height: 180px;
+    height: 11rem;
   }
   main {
     display: block;
+  }
+  .text {
+    font-size: 1rem;
   }
   .nav-carousel {
     justify-content: center;
